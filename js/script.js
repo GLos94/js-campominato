@@ -22,13 +22,16 @@ var i = 0;
 var trovato = false;
 
 while (i < maxTentativi && trovato == false) {
+
   var numUtente = parseInt(prompt("Inserisci un numero"));
+  console.log(i, numUtente);
 
 // devo controllare che il numero inserito dall'utente non si ripeta, che non sia contenuto nell'array dei numeri casuali e se non è contenuto in questo array lo devo pushare al suo interno
 
     if(isInRange(1, 100, numUtente) == true && inArray(arrayNumeriCasualiPc, numUtente) == false && inArray(arrayUtente, numUtente) == false) {
       arrayUtente.push(numUtente);
       punteggio++;
+      i++;
     }
 
 // se il numero è presente nella lista dei numeri generati, la partita termina
